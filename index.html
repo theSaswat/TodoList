@@ -13,21 +13,18 @@
             background-size: cover;
         }
         .main{
-            width: 600px;
+            width: 45%;
+            height: auto;
             margin: 100px auto;
             text-align: center;
             box-shadow: 0 0 10px black;
             padding: 30px;
-            background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+            background: linear-gradient(310deg, #12c2e9, #c471ed);
            border-radius: 25px;
-           height: auto;
+            
+           
         }
-        .main:hover{
-            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
-            width:650px;
-            margin: 120px auto;
-            height: auto;
-        }
+       
         div{
             text-align: center;
             padding-left: 70px;
@@ -35,28 +32,28 @@
         }   
         button{
             margin-left: 10px;
-            border-radius: 25px;
+            
         }
         button:hover{
-            background-color:rgb(230, 208, 18);
+            background-color:rgb(255, 249, 191);
         }
         span{
             margin-left: -57px;
-            color: rgb(11, 236, 48);
-            text-shadow: 2px 2px #FF0000;
+            
         
         }
         h1{
             text-shadow: 2px 2px #FF0000;
         }
         input{
-            border-radius: 25px;
+            border-radius: 0px;
         }
         label{
             font-size: 28px;
-            text-shadow: 2px 2px #64f304;
-            color: coral;
+            text-shadow: 2px 2px #c6ffa0;
+            color: rgb(4, 94, 94);
         }
+        
 
    </style>
 </head>
@@ -99,11 +96,17 @@ remove.classList.add('remove');
 remove.innerHTML = "Remove";
 remove.addEventListener('click', () => this.remove(itemBox, name));
 
+var update = document.createElement('button');
+update.classList.add('update');
+update.innerHTML = "Update";
+update.addEventListener('click', () => this.update(itemBox, name));
+
 container.appendChild(itemBox);
 
 itemBox.appendChild(input);
 itemBox.appendChild(edit);
 itemBox.appendChild(remove);
+itemBox.appendChild(update);
 
 }
 
@@ -116,7 +119,14 @@ else{
    
 }
 }
-
+update(input,name){
+    if(input.disabled == false){
+        input.disabled = !input.disabled;
+        }
+        else{
+        input.disabled = !input.disabled;
+    }
+}
  remove(itemBox, name){
 itemBox.parentNode.removeChild(itemBox);
  }
